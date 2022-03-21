@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+When rendering components which inherit from another component there is an issue rendering the expected template. Reproduces a component inheritance bug in view_component 2.51.0.
 
-Things you may want to cover:
+## Steps to reproduce:
 
-* Ruby version
+**In development mode**:
 
-* System dependencies
+1. Go to the homepage
+2. On first load you should see "Base component template"
+3. On reloading the page you should see "Inherited component template"
 
-* Configuration
+**In test mode (assuming where cache_classes is true?)**:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. ./bin rails -e test
+2. Go to the homepage
+3. You should see "Base component template" rather than the expected "Inherited component template"
