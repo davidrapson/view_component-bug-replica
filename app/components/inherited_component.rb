@@ -1,0 +1,2 @@
+class InheritedComponent < BaseComponent
+end
